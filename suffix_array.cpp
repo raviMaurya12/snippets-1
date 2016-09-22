@@ -1,8 +1,17 @@
 // Suffix array
 //
-// Configure: MAX
-// Configure: LG
-// Note: (1 << LG) >= 2 * N
+// Function suffix_array(s, N) computes the suffix array of string s (it's
+// length is N) and stores it in array srt, where i-th sorted suffix starts
+// from s[srt[i].second].
+// Time complexity: O(N log^2 N)
+//
+// Function lcp(a, b) computes the length of longest common prefix of suffixes
+// s[a..] and s[b..].
+// Time complexity: O(log N)
+//
+// Constants to configure:
+// - MAX is the maximal value of N
+// - LG is ceil(log2(MAX)) + 1
 
 const int MAX = 100100;
 const int LG = 17 + 1;
