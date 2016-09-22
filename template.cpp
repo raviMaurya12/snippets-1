@@ -1,3 +1,8 @@
+// The main program template
+//
+// This file contains the most common includes and macros for concise for-loops
+// and debugging by printing.
+
 #include <cstdio>
 #include <cstring>
 #include <cassert>
