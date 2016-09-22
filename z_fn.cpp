@@ -1,6 +1,6 @@
 // Z Algorithm
 //
-// Given string s, this algorithm produces an array z, where z[i] is the
+// Given a string s, this algorithm produces an array z, where z[i] is the
 // length of longest substring starting from s[i] which is also a prefix.
 // More thorough explanation: http://codeforces.com/blog/entry/3107
 //
