@@ -11,7 +11,7 @@
 // - N is the length of the string
 // - z is the array where the result will be stored
 
-void z_fn(char *s, int N, int *z) {
+void z_algorithm(char *s, int N, int *z) {
   z[0] = N;
   int L = -1, R = -1;
 
