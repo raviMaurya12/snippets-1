@@ -1,9 +1,15 @@
-// Z function
+// Z Algorithm
 //
-// Configure: MAX
-// Note: z[0] = N
-
-int z[MAX];
+// Given string `s`, this algorithm produces an array `z`, where `z[i]` is the
+// length of longest substring starting from `s[i]` which is also a prefix.
+// More thorough explanation: http://codeforces.com/blog/entry/3107
+//
+// Time complexity: O(N)
+//
+// Arguments:
+// - `s` is the string
+// - `N` is the length of the string
+// - `z` is the array where the result will be stored
 
 void z_fn(char *s, int N, int *z) {
   z[0] = N;
