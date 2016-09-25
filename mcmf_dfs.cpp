@@ -1,12 +1,26 @@
 // Min-cost max-flow (uses DFS)
 //
-// Configure: MAXV
-// Configure: MAXE (at least 2*calls_to_edge)
-// Configure: oo (max_capacity and max_distance)
+// Given a graph, computes the minimum cost of the maximum flow.
+// This version uses DFS to find shortest paths and gives good performance on
+// very "shallow" graphs: graphs which have very short paths between source
+// and sink (e.g. at most 10 edges).
+// In such cases this algorithm can be orders of magnitude faster than the
+// Dijkstra version.
 //
-// init(n): Resets and initializes with given number of nodes
-// edge(x, y, c, w): Adds an edge x->y with capacity c and weight w
-// run(src, sink): Starts the algorithm and returns {total_flow, total_cost}
+// To use, call init(n), then add edges using edge(x, y, c, w), and finally
+// call run(src, sink).
+//
+// Functions:
+// - init(n) initializes the algorithm with the given number of nodes
+// - edge(x, y, c, w) adds an edge x->y with capacity c and weight w
+// - run(src, sink) runs the algorithm and returns {total_flow, total_cost}
+//
+// Time complexity: O(V * E^3)
+//
+// Constants to configure:
+// - MAXV is the maximum number of vertices
+// - MAXE is the maximum number of edges (i.e. twice the calls to function edge)
+// - oo is the "infinity" value
 
 namespace Mcmf {
   const int MAXV = 1000100;
