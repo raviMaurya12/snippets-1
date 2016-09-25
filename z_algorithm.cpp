@@ -1,15 +1,10 @@
 // Z Algorithm
 //
-// Given a string s, this algorithm produces an array z, where z[i] is the
-// length of longest substring starting from s[i] which is also a prefix.
-// More thorough explanation: http://codeforces.com/blog/entry/3107
+// Given a string s of length N, computes an array z, where z[i] is the length
+// of longest substring starting from s[i] which is also a prefix of s.
+// More information: http://codeforces.com/blog/entry/3107
 //
 // Time complexity: O(N)
-//
-// Arguments:
-// - s is the string
-// - N is the length of the string
-// - z is the array where the result will be stored
 
 void z_algorithm(char *s, int N, int *z) {
   z[0] = N;
