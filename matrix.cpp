@@ -1,10 +1,11 @@
 // Matrix multiplication and exponentiation
 //
-// Configure: mod
-// Configure: DIM
-// Note: Elements are of int type
-// Note: Computations use llint
-// Note: Multiplication uses modulus mod^2
+// An implementation of fast matrix multiplication and exponentiation.
+// Modular arithmetic is used.
+//
+// Constants to configure:
+// - mod is the modulus
+// - DIM is the dimension of matrices
 
 const int mod = int(1e9) + 7;
 const int DIM = 52;
