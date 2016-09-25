@@ -1,6 +1,17 @@
-// Compute primes up to MAX
+// Compute prime numbers up to MAX
+//
+// To initialize, call init_prime().
+// This will compute all primes lower than or equal to MAX.
+//
+// Globals:
+// - prime[x] is true iff x is prime
+// - P contains all primes up to MAX
+//
+// Time complexity: O(N log log N)
+//
+// Constants to configure:
+// - MAX is the upper bound on primes to compute
 
-//bitset<MAX> prime;
 bool prime[MAX];
 vector<int> P;
 

@@ -29,7 +29,7 @@
 // - kth: O(log N)
 //
 // Constants to configure:
-// - MAX is the maximal number of nodes
+// - MAX is the maximum number of nodes
 // - LG is ceil(log2(MAX))
 
 int N;

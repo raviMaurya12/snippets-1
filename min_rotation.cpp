@@ -1,9 +1,9 @@
-// Lexicographically minimal rotation of a sequence
+// Lexicographically minimum rotation of a sequence
 //
 // Configure: Type of s
 // Note: Array s must be at least of length 2*N
 //
-// min_rotation(s, N): Returns the index of the start of a minimal rotaitcon
+// min_rotation(s, N): Returns the index of the start of a minimum rotaitcon
 
 int min_rotation(int *s, int N) {
   REP(i, N) s[N+i] = s[i];

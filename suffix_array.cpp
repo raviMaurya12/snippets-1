@@ -9,7 +9,7 @@
 // Time complexity: O(log N)
 //
 // Constants to configure:
-// - MAX is the maximal value of N
+// - MAX is the maximum value of N
 // - LG is ceil(log2(MAX)) + 1
 
 const int MAX = 100100;

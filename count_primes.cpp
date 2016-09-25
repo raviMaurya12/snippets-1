@@ -5,7 +5,7 @@
 // or equal to N.
 //
 // Constants to configure:
-// - MAX is the maximal value of sqrt(N) + 1
+// - MAX is the maximum value of sqrt(N) + 1
 
 int prec[MAX];
 

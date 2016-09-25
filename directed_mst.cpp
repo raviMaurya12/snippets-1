@@ -1,4 +1,4 @@
-// Directed minimal spanning tree
+// Directed minimum spanning tree
 //
 // Configure: oo
 //

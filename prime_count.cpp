@@ -1,11 +1,11 @@
 // Count prime numbers up to N
 //
-// To initialize, call init_prime_count() first.
+// To initialize, call init_count_primes() first.
 // Function count_primes(N) will compute the number of prime numbers lower than
 // or equal to N.
 //
 // Constants to configure:
-// - MAX is the maximal value of sqrt(N) + 2
+// - MAX is the maximum value of sqrt(N) + 2
 
 bool prime[MAX];
 int prec[MAX];
@@ -33,7 +33,7 @@ llint count_primes(llint N) {
   return N-1 - rec(N, K) + prec[P[K]];
 }
 
-void init_prime_count() {
+void init_count_primes() {
   prime[2] = true;
   for (int i = 3; i < MAX; i += 2) prime[i] = true;
 
