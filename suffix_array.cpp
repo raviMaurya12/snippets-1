@@ -1,6 +1,6 @@
 // Suffix array
 //
-// Given string s of length N, function suffix_array(s, N) computes an array
+// Given a string s of length N, function suffix_array(s, N) computes an array
 // of sorted suffixes: the i-th sorted suffix starts from s[srt[i].second].
 // Time complexity: O(N log^2 N)
 //

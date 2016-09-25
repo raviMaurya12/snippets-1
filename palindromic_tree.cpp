@@ -11,7 +11,7 @@
 // - http://codeforces.com/blog/entry/13959
 //
 // To run, set N and s, then call paltree().
-// Note: it is assumed the string contains only uppercase letters.
+// Note: It is assumed the string contains uppercase letters only.
 //
 // Globals:
 // - N is the length of the string
