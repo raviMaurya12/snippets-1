@@ -1,4 +1,13 @@
-// 2D convex hull
+// Convex hull (in 2D)
+//
+// Given a set of points, returns the subset which forms the convex hull.
+// It is assumed that points are compared lexicographically by (x, y).
+//
+// Note: This implementation returns the smallest subset of points. If you
+// want to also include points which are on the edges of the convex hull,
+// change the `<=` to `<`
+//
+// Time complexity: O(N log N)
 
 vector<Pt> convex_hull(vector<Pt> pts) {
   sort(pts.begin(), pts.end());
@@ -7,7 +16,7 @@ vector<Pt> convex_hull(vector<Pt> pts) {
   REP(step, 2) {
     auto start = H.size();
     for (Pt P : pts) {
-      while (H.size() >= start+2 && ccw(H[H.size()-2], H[H.size()-1], P) < 0)
+      while (H.size() >= start+2 && ccw(H[H.size()-2], H[H.size()-1], P) <= 0)
         H.pop_back();
       H.push_back(P);
     }
