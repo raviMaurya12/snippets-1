@@ -1,10 +1,16 @@
 // Euclidean algorithm
 //
-// Note: If a or b is negative, then g can be negative, too!
+// Given two integers a and b, solves the Diophantine equation:
+//   a * x + b * y = gcd(a, b)
 //
-// a*x + b*y = g
-// x' = x + k * b/g
-// y' = y - k * a/g
+// The function will compute the x, y, and g.
+// Note: computed value g can be negative.
+//
+// Given one solution (x_0, y_0), other solutions can be represented as:
+//   x_k = x_0 + k * b / g
+//   y_k = y_0 - k * a / g
+//
+// Time complexity: O(log min(a, b))
 
 void euclid(llint a, llint b, llint &x, llint &y, llint &g) {
   if (b == 0) {
