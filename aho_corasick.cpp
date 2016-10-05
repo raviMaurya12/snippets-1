@@ -1,9 +1,22 @@
-// Aho-Corasick
+// Aho Corasick
 //
-// Configure: MAX
-// Configure: ALPHA
-// Initialize: V = 0, node()
-// Note: s[i] - 'A'
+// Given a set of patterns, it builds the Aho-Corasick trie. This trie allows
+// searching all matches in a string in linear time.
+//
+// To use, first call `node` once, then call `insert` for every pattern, and
+// finally initialize the trie by calling `init_aho`.
+// Note: It is assumed all strings contains uppercase letters only.
+//
+// Globals:
+// - V is the number of vertices in the trie
+// - trie[x][c] is the child of node x labeled with letter 'A' + c
+// - fn[x] points from node x to it's "failure" node
+//
+// Time complexity: O(N), where N is the sum of lengths of all patterns
+//
+// Constants to configure:
+// - MAX is the maximum sum of lengths of patterns
+// - ALPHA is the size of the alphabet (usually 26)
 
 int V;
 int trie[MAX][ALPHA];
