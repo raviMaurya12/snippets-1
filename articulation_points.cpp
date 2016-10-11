@@ -1,4 +1,18 @@
 // Articulation points
+//
+// Finds the articulation points on an undirected graph.
+// A node is an articulation points iff it's removal would split the graph in
+// multiple connected components.
+//
+// To find articulation points on a graph, call init().
+//
+// Globals:
+// - N is the number of vertices in the graph
+// - E[x] is the list of nodes adjacent to node x
+// - articulation[x] will be true if node x is an articulation point
+//
+// Constants to configure:
+// - MAX is the maximum number of nodes in the graph
 
 int tick = 1;
 int discovery[MAX];
