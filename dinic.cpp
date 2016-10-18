@@ -1,12 +1,22 @@
-// Network flow
+// Network flow (Dinic's algorithm)
 //
-// Configure: MAXV
-// Configure: MAXE (at least 2 * calls_to_edge)
-// Configure: oo
+// Given a directed weighted graph, source, and sink, computes the maximum flow
+// from source to sink.
 //
-// init(n): Resets and initializes with given number of nodes
-// edge(x, y, c1, c1): Adds an edge x->y with capacity c and edge y->x with capacity c2
-// run(src, sink): Starts the algorithm and returns total flow
+// To use, call init(n), then add edges using edge(x, y, c1, c2), and finally
+// call run(src, sink).
+//
+// Functions:
+// - init(n) initializes the algorithm with the given number of nodes
+// - edge(x, y, c1, c2) adds edges x->y of capacity c1 and y->x of capacity c2
+// - run(src, sink) runs the algorithm and returns the total flow
+//
+// Time complexity: O(V^2 * E)
+//
+// Constants to configure:
+// - MAXV is the maximum number of vertices
+// - MAXE is the maximum number of edges (i.e. twice the calls to function edge)
+// - oo is the "infinity" value
 
 namespace Dinic {
   const int MAXV = 1000100;
