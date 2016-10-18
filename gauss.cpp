@@ -1,12 +1,16 @@
 // Gaussian elimination
 //
-// Configure: MAXC
-// Configure: eps
-// Note: Gauss::row[i] is -1 for free variables
-// Note: Rows are not normalized (not divided by pivot)
+// Solves systems of linear equations.
 //
-// Gauss::run(mat, R, C): Solves the system (and modifies mat)
-// Gauss::ans[i]: Solution for variable i (i-th column)
+// To use, build a matrix of coefficients and call run(mat, R, C).
+// If the i-th variable is free, row[i] will be -1, otherwise it's value will
+// be ans[i].
+//
+// Time complexity: O(R * C^2)
+//
+// Constants to configure:
+// - MAXC is the number of columns
+// - eps is the epsilon value
 
 namespace Gauss {
   const int MAXC = 1001;
