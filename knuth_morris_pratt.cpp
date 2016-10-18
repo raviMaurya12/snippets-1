@@ -8,7 +8,8 @@
 //
 // Time complexity: O(N)
 //
-// Configure: konstanta MAX
+// Constants to configure:
+// - MAX is the maximum length of the string
 
 char s[MAX];
 int fn[MAX];

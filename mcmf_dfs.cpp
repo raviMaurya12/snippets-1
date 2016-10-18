@@ -1,6 +1,7 @@
 // Min-cost max-flow (uses DFS)
 //
-// Given a graph, computes the minimum cost of the maximum flow.
+// Given a directed weighted graph, source, and sink, computes the minimum cost
+// of the maximum flow from source to sink.
 // This version uses DFS to find shortest paths and gives good performance on
 // very "shallow" graphs: graphs which have very short paths between source
 // and sink (e.g. at most 10 edges).

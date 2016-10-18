@@ -1,6 +1,7 @@
 // Min-cost max-flow (uses Dijkstra's algorithm)
 //
-// Given a graph, computes the minimum cost of the maximum flow.
+// Given a directed weighted graph, source, and sink, computes the minimum cost
+// of the maximum flow from source to sink.
 // This version uses Dijkstra's algorithm and gives good performance on all
 // kinds of graphs.
 //
