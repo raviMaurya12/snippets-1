@@ -1,8 +1,9 @@
 // Directed minimum spanning tree
 //
-// Configure: oo
+// Given a directed weighted graph and root node, computes the minimum spanning
+// arborescence on it.
 //
-// dmst(N, E, root): Returns the cost of directed MST
+// Complexity: O(N * M)
 
 struct Edge { int x, y, w; };
 
