@@ -11,6 +11,8 @@
 // - E[x] is the list of nodes adjacent to node x
 // - articulation[x] will be true if node x is an articulation point
 //
+// Time complexity: O(N + E)
+//
 // Constants to configure:
 // - MAX is the maximum number of nodes in the graph
 

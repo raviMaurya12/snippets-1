@@ -3,7 +3,7 @@
 // Given a directed weighted graph and root node, computes the minimum spanning
 // arborescence on it.
 //
-// Complexity: O(N * M)
+// Complexity: O(N * M), where N is the number of nodes, and E the number of edges
 
 struct Edge { int x, y, w; };
 

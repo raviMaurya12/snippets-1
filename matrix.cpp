@@ -3,6 +3,10 @@
 // An implementation of fast matrix multiplication and exponentiation.
 // Modular arithmetic is used.
 //
+// Time complexities:
+// - operator *: O(N^3)
+// - operator %: O(N^3 * log b)
+//
 // Constants to configure:
 // - mod is the modulus
 // - DIM is the dimension of matrices

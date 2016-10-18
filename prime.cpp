@@ -10,7 +10,7 @@
 // Time complexity: O(N log log N)
 //
 // Constants to configure:
-// - MAX is the upper bound on primes to compute
+// - MAX is the upper bound (exclusive) on primes to compute
 
 bool prime[MAX];
 vector<int> P;

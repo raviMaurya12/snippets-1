@@ -1,7 +1,7 @@
 // Z Algorithm
 //
 // Given a string s of length N, computes an array z, where z[i] is the length
-// of longest substring starting from s[i] which is also a prefix of s.
+// of longest substring starting from index i which is also a prefix of s.
 // More information: http://codeforces.com/blog/entry/3107
 //
 // Time complexity: O(N)

@@ -11,7 +11,7 @@
 // - big integer multiplication
 // - convolutions in dynamic programming
 //
-// Time complexity: O(N log N)
+// Time complexity: O(N log N), where N is the length of arrays
 //
 // Constants to configure:
 // - MAX must be at least 2^ceil(log2(2 * len))

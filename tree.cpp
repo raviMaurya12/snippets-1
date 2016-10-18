@@ -1,5 +1,7 @@
 // Common algorithms on trees
 //
+// To initialize, call dfs(root, -1).
+//
 // Globals:
 // - N is the number of nodes
 // - length[x] is the cost of the edge between x and it's parent

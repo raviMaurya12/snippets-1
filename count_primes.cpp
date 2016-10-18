@@ -4,6 +4,9 @@
 // Function count_primes(N) will compute the number of prime numbers lower than
 // or equal to N.
 //
+// Time complexity: I don't know.
+// You can reasonably quickly count primes up to around 10^12.
+//
 // Constants to configure:
 // - MAX is the maximum value of sqrt(N) + 1
 

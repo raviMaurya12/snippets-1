@@ -7,7 +7,7 @@
 // want to also include points which are on the edges of the convex hull,
 // change the `<=` to `<`
 //
-// Time complexity: O(N log N)
+// Time complexity: O(N log N), where N is the number of points
 
 vector<Pt> convex_hull(vector<Pt> pts) {
   sort(pts.begin(), pts.end());

@@ -3,8 +3,8 @@
 // Given a set of patterns, it builds the Aho-Corasick trie. This trie allows
 // searching all matches in a string in linear time.
 //
-// To use, first call `node` once, then call `insert` for every pattern, and
-// finally initialize the trie by calling `init_aho`.
+// To use, first call `node` once to create the root node, then call `insert`
+// for every pattern, and finally initialize the trie by calling `init_aho`.
 // Note: It is assumed all strings contains uppercase letters only.
 //
 // Globals:
