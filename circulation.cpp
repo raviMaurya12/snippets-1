@@ -1,11 +1,21 @@
-// Circulation (a variant of network flow)
+// Circulation
+//
+// Given a directed weighted graph, computes the minimum cost to run the maximum
+// amount of circulation flow through the graph.
 //
 // Configure: MAXV
 // Configure: MAXE (at least 2 * calls_to_edge)
 //
-// init(n): Resets and initializes with given number of nodes
-// edge(x, y, c, w): Adds an edge x->y with capacity c and cost w
-// run(): Starts the algorithm and returns total cost
+// Functions:
+// - init(n) initializes the algorithm with the given number of nodes
+// - edge(x, y, c, w) adds an edge x->y with capacity c and weight w
+// - run() runs the algorithm and returns total cost
+//
+// Time complexity: No idea, but think of it as O(V * E), and often even faster.
+//
+// Constants to configure:
+// - MAXV is the maximum number of vertices
+// - MAXE is the maximum number of edges (i.e. twice the calls to function edge)
 
 namespace Circu {
   const int MAXV = 1000100;
