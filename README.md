@@ -26,7 +26,7 @@ Graphs:
 * Articulation points
 * Circulation (a variant of network flow)
 * Dinic's algorithm (maximum flow)
-* Directed minimum spanning tree (actually, arborescence)
+* Directed minimum spanning tree (arborescence)
 * Heavy-light decomposition
 * Min-cost max-flow using DFS
 * Min-cost max-flow using Dijkstra

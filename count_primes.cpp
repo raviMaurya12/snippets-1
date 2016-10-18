@@ -1,16 +1,17 @@
 // Count prime numbers up to N
 //
-// To initialize, call init_prime_count() first.
+// To initialize, call init_count_primes() first.
 // Function count_primes(N) will compute the number of prime numbers lower than
 // or equal to N.
 //
-// Time complexity: I don't know.
-// You can reasonably quickly count primes up to around 10^12.
+// Time complexity: No idea. Primes up to 10^12 can be counted in ~1 second.
 //
 // Constants to configure:
-// - MAX is the maximum value of sqrt(N) + 1
+// - MAX is the maximum value of sqrt(N) + 2
 
+bool prime[MAX];
 int prec[MAX];
+vector<int> P;
 
 llint rec(llint N, int K) {
   if (N <= 1 || K < 0) return 0;
@@ -35,6 +36,15 @@ llint count_primes(llint N) {
   return N-1 - rec(N, K) + prec[P[K]];
 }
 
-void init_prime_count() {
+void init_count_primes() {
+  prime[2] = true;
+  for (int i = 3; i < MAX; i += 2) prime[i] = true;
+
+  for (int i = 3; i*i < MAX; i += 2)
+    if (prime[i])
+      for (int j = i*i; j < MAX; j += i+i)
+        prime[j] = false;
+
+  REP(i, MAX) if (prime[i]) P.push_back(i);
   FOR(i, 1, MAX) prec[i] = prec[i-1] + prime[i];
 }
