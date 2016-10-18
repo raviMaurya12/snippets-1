@@ -1,14 +1,20 @@
 // Fast Fourier transform
 //
-// Configure: MAX = 2^ceil(log2(2 * len))
-// Configure: typedef value
-// Configure: typedef comp: double or long double?
-// Note: The result of multiplication is just rounded real part
-//
-// mult(a, b, c, len): Effectively identical to:
+// Caling mult(a, b, c, len) is identical to:
 //   REP(i, 2*len) tmp[i] = 0
 //   REP(i, len) REP(j, len) tmp[i+j] += a[i] * b[j];
 //   REP(i, 2*len) c[i] = tmp[i];
+//
+// There is also a variant with modular arithmetic: mult_mod.
+//
+// Common use cases:
+// - big integer multiplication
+// - convolutions in dynamic programming
+//
+// Time complexity: O(N log N)
+//
+// Constants to configure:
+// - MAX must be at least 2^ceil(log2(2 * len))
 
 namespace FFT {
   const int MAX = 1 << 20;
@@ -59,28 +65,28 @@ namespace FFT {
 
     REP(i, 2*len) c[i] = round(z1[i].real());
   }
-}
 
-void llmult(llint *a, llint *b, llint *c, int len) {
-  static llint a0[MAX], a1[MAX];
-  static llint b0[MAX], b1[MAX];
-  static llint c0[MAX], c1[MAX], c2[MAX];
+  void mult_mod(llint *a, llint *b, llint *c, int len, int mod) {
+    static llint a0[MAX], a1[MAX];
+    static llint b0[MAX], b1[MAX];
+    static llint c0[MAX], c1[MAX], c2[MAX];
 
-  REP(i, len) a0[i] = a[i] & 0xFFFF;
-  REP(i, len) a1[i] = a[i] >> 16;
+    REP(i, len) a0[i] = a[i] & 0xFFFF;
+    REP(i, len) a1[i] = a[i] >> 16;
 
-  REP(i, len) b0[i] = b[i] & 0xFFFF;
-  REP(i, len) b1[i] = b[i] >> 16;
+    REP(i, len) b0[i] = b[i] & 0xFFFF;
+    REP(i, len) b1[i] = b[i] >> 16;
 
-  FFT::mult(a0, b0, c0, len);
-  FFT::mult(a1, b1, c2, len);
+    FFT::mult(a0, b0, c0, len);
+    FFT::mult(a1, b1, c2, len);
 
-  REP(i, len) a0[i] += a1[i];
-  REP(i, len) b0[i] += b1[i];
-  FFT::mult(a0, b0, c1, len);
-  REP(i, 2*len) c1[i] -= c0[i] + c2[i];
+    REP(i, len) a0[i] += a1[i];
+    REP(i, len) b0[i] += b1[i];
+    FFT::mult(a0, b0, c1, len);
+    REP(i, 2*len) c1[i] -= c0[i] + c2[i];
 
-  REP(i, 2*len) c1[i] %= mod;
-  REP(i, 2*len) c2[i] %= mod;
-  REP(i, 2*len) c[i] = (c0[i] + (c1[i] << 16) + (c2[i] << 32)) % mod;
+    REP(i, 2*len) c1[i] %= mod;
+    REP(i, 2*len) c2[i] %= mod;
+    REP(i, 2*len) c[i] = (c0[i] + (c1[i] << 16) + (c2[i] << 32)) % mod;
+  }
 }
