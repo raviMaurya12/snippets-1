@@ -3,7 +3,7 @@
 // Given a sequence s of length N, min_rotation(s, N) returns the start index
 // of the lexicographically minimum rotation.
 //
-// Note: rray s must be of length of at least 2 * N.
+// Note: array s must be of length of at least 2 * N.
 //
 // Time complexity: O(N)
 

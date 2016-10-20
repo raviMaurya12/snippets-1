@@ -11,7 +11,7 @@
 // Functions:
 // - init(n) initializes the algorithm with the given number of nodes
 // - edge(x, y, c, w) adds an edge x->y with capacity c and weight w
-// - run(src, sink) runs the algorithm and returns {total_flow, total_cost}
+// - run(src, sink) runs the algorithm and returns {total_cost, total_flow}
 //
 // Time complexity: O(V * E^2 log E)
 //
