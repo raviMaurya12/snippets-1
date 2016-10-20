@@ -11,7 +11,8 @@
 // - edge(x, y, c, w) adds an edge x->y with capacity c and weight w
 // - run() runs the algorithm and returns total cost
 //
-// Time complexity: No idea, but think of it as O(V * E), and often even faster.
+// Time complexity: No idea, but it should be fast enough to solve any problem
+// where V and E are up to around 1000.
 //
 // Constants to configure:
 // - MAXV is the maximum number of vertices
