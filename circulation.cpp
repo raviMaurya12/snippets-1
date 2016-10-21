@@ -54,12 +54,22 @@ namespace Circu {
   }
 
   llint cycle(int s, bool flip = false) {
-    llint sum = 0;
     int x = s;
+    llint c = cap[how[x]];
     do {
       int e = how[x];
-      if (flip) --cap[e], ++cap[e^1];
-      sum += cost[e];
+      c = min(c, cap[e]);
+      x = from[e];
+    } while (x != s);
+
+    llint sum = 0;
+    do {
+      int e = how[x];
+      if (flip) {
+        cap[e] -= c;
+        cap[e^1] += c;
+      }
+      sum += cost[e] * c;
       x = from[e];
     } while (x != s);
     return sum;
