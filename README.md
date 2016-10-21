@@ -17,20 +17,20 @@ Strings:
 * Aho-Corasick (string searching)
 * Knuth-Morris-Pratt (string searching)
 * Manacher's algorithm (finding palindromes)
-* Minimum rotation
-* Palindromic tree (trie of palindromes in a string)
-* Suffix array
-* Z algorithm (matching a string with its suffixes)
+* Minimum lexicographic rotation
+* Palindromic tree (trie of all substring palindromes)
+* Suffix array and LCP
+* Z algorithm (matching all suffixes with longest prefix)
 
 Graphs:
 * Articulation points
 * Circulation (a variant of network flow)
 * Dinic's algorithm (maximum flow)
 * Directed minimum spanning tree (arborescence)
-* Heavy-light decomposition
+* Heavy-light decomposition of a tree
 * Min-cost max-flow using DFS
 * Min-cost max-flow using Dijkstra
-* Tree algorithms
+* Common tree algorithms
 
 Math:
 * Convex hull of 2D points
@@ -62,12 +62,12 @@ Just copy-paste any snippet in your code and follow instructions in comments.
 
 Yes, they're very likely to be.
 
-All snippets were tested in solutions for multiple programming problems, and
+All snippets were tested in solutions to multiple programming problems, and
 used as a reference in two ACM-ICPC world finals.
 
 ### Can I use these snippets in my code?
 
-Yes, I don't care.
+Yes, I don't mind.
 
 Just make sure you understand the rules of competitions you
 participate in. Sometimes they require solutions to be fully written by
