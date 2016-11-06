@@ -62,6 +62,7 @@ namespace Mcmf {
   pair<llint, llint> run(int src, int sink) {
     llint total = 0;
     llint flow = 0;
+    pi[src] = oo;
 
     for (;;) {
       REP(i, V) bio[i] = false;
