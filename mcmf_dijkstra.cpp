@@ -26,7 +26,7 @@ namespace Mcmf {
   const llint oo = 1e18;
 
   int V, E;
-  int last[MAXV], how[MAXV]; llint dist[MAXV];
+  int last[MAXV], how[MAXV]; llint dist[MAXV], pi[MAXV];
   int next[MAXE], from[MAXE], adj[MAXE]; llint cap[MAXE], cost[MAXE];
 
   struct cmpf {
@@ -41,6 +41,7 @@ namespace Mcmf {
     V = n;
     E = 0;
     REP(i, V) last[i] = -1;
+    REP(i, V) pi[i] = 0;
   }
 
   void edge(int x, int y, llint c, llint w) {
@@ -54,25 +55,30 @@ namespace Mcmf {
 
     for (;;) {
       REP(i, V) dist[i] = oo;
-      dist[src] = 0;
+      S.clear();
 
-      for (;;) {
-        bool done = true;
-        REP(x, V) for (int e = last[x]; e != -1; e = next[e]) {
+      dist[src] = 0;
+      S.insert(src);
+
+      while (!S.empty()) {
+        int x = *S.begin();
+        S.erase(S.begin());
+        if (x == sink) break;
+
+        for (int e = last[x]; e != -1; e = next[e]) {
           if (cap[e] == 0) continue;
 
           int y = adj[e];
-          llint val = dist[x] + cost[e];
+          llint val = dist[x] + pi[x] + cost[e] - pi[y];
 
           if (val < dist[y]) {
+            S.erase(y);
             dist[y] = val;
             how[y] = e;
-            done = false;
+            S.insert(y);
           }
         }
-        if (done) break;
       }
-
       if (dist[sink] >= oo / 2) break;
 
       llint aug = cap[how[sink]];
@@ -85,7 +91,10 @@ namespace Mcmf {
         total += cost[how[i]] * aug;
       }
       flow += aug;
+
+      REP(i, V) pi[i] = min(pi[i] + dist[i], oo);
     }
-    return {total, flow};
+
+    return make_pair(total, flow);
   }
 }
