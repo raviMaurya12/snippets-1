@@ -41,7 +41,6 @@ namespace Mcmf {
     V = n;
     E = 0;
     REP(i, V) last[i] = -1;
-    REP(i, V) pi[i] = 0;
   }
 
   void edge(int x, int y, llint c, llint w) {
@@ -52,6 +51,17 @@ namespace Mcmf {
   pair<llint, llint> run(int src, int sink) {
     llint total = 0;
     llint flow = 0;
+
+    REP(i, V) pi[i] = oo;
+    pi[src] = 0;
+
+    for (;;) {
+      bool done = true;
+      REP(x, V) for (int e = last[x]; e != -1; e = next[e])
+        if (cap[e] && pi[adj[e]] > pi[x] + cost[e])
+          pi[adj[e]] = pi[x] + cost[e], done = false;
+      if (done) break;
+    }
 
     for (;;) {
       REP(i, V) dist[i] = oo;
@@ -95,6 +105,6 @@ namespace Mcmf {
       REP(i, V) pi[i] = min(pi[i] + dist[i], oo);
     }
 
-    return make_pair(total, flow);
+    return {total, flow};
   }
 }
