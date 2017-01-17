@@ -14,37 +14,37 @@ hacks, etc. are all over the place, and that's OK.
 ### What is included?
 
 Strings:
-* Aho-Corasick (string searching)
-* Knuth-Morris-Pratt (string searching)
-* Manacher's algorithm (finding palindromes)
-* Minimum lexicographic rotation
-* Palindromic tree (trie of all substring palindromes)
-* Suffix array and LCP
-* Z algorithm (matching all suffixes with longest prefix)
+* [Aho-Corasick](aho_corasick.cpp) (string searching)
+* [Knuth-Morris-Pratt](knuth_morris_pratt.cpp) (string searching)
+* [Manacher's algorithm](manacher.cpp) (finding palindromes)
+* [Minimum lexicographic rotation](min_rotation.cpp)
+* [Palindromic tree](palindromic_tree.cpp) (trie of all substring palindromes)
+* [Suffix array and LCP](suffix_array.cpp)
+* [Z algorithm](z_algorithm.cpp) (matching all suffixes with longest prefix)
 
 Graphs:
-* Articulation points
-* Circulation (a variant of network flow)
-* Dinic's algorithm (maximum flow)
-* Directed minimum spanning tree (arborescence)
-* Heavy-light decomposition of a tree
-* Min-cost max-flow using DFS
-* Min-cost max-flow using Dijkstra
-* Common tree algorithms
+* [Articulation points](articulation_points.cpp)
+* [Circulation](circulation.cpp) (a variant of network flow)
+* [Dinic's algorithm](dinic.cpp) (maximum flow)
+* [Directed minimum spanning tree (arborescence)](directed_mst.cpp)
+* [Heavy-light decomposition of a tree](heavy_light.cpp)
+* [Min-cost max-flow using DFS](mcmf_dfs.cpp)
+* [Min-cost max-flow using Dijkstra](mcmf_dijkstra.cpp)
+* [Common tree algorithms](tree.cpp)
 
 Math:
-* Convex hull of 2D points
-* Counting primes up to N
-* Euclidean algorithm (GCD, Diophantine equations)
-* Rounded integer division
-* Gaussian elimination
-* Modular Gaussian elimination
-* Fast Fourier transform
-* Matrix multiplication and exponentiation
-* Sieve of Eratosthenes
+* [Convex hull of 2D points](convex_hull.cpp)
+* [Counting primes up to N](count_primes.cpp)
+* [Euclidean algorithm](euclid.cpp) (GCD, Diophantine equations)
+* [Rounded integer division](div_round.cpp)
+* [Gaussian elimination](gauss.cpp)
+* [Modular Gaussian elimination](gauss_mod.cpp)
+* [Fast Fourier transform](fft.cpp)
+* [Matrix multiplication and exponentiation](matrix.cpp)
+* [Sieve of Eratosthenes](prime.cpp)
 
 Other:
-* Monotone queue (can tell maximum element in O(1))
+* [Monotone queue](monotone_queue.cpp) (can tell maximum element in O(1))
 
 ### How to use?
 
