@@ -21,7 +21,7 @@ llint rec(llint N, int K) {
   const int LIM = 250;
   static int memo[LIM*LIM][LIM];
 
-  bool ok = N < LIM*LIM;
+  bool ok = N < LIM*LIM && K < LIM;
   if (ok && memo[N][K]) return memo[N][K];
 
   llint ret = N/P[K] - rec(N/P[K], K-1) + rec(N, K-1);
@@ -46,5 +46,5 @@ void init_count_primes() {
         prime[j] = false;
 
   REP(i, MAX) if (prime[i]) P.push_back(i);
-  FOR(i, 1, MAX) prec[i] = prec[i-1] + prime[i];
+  FOR(i, 1, MAX - 1) prec[i] = prec[i-1] + prime[i];
 }
