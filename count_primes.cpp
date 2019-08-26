@@ -46,5 +46,5 @@ void init_count_primes() {
         prime[j] = false;
 
   REP(i, MAX) if (prime[i]) P.push_back(i);
-  FOR(i, 1, MAX - 1) prec[i] = prec[i-1] + prime[i];
+  FOR(i, 1, MAX) prec[i] = prec[i-1] + prime[i];
 }
