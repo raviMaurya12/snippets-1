@@ -21,7 +21,7 @@ llint rec(llint N, int K) {
   const int LIM = 250;
   static int memo[LIM*LIM][LIM];
 
-  bool ok = N < LIM*LIM;
+  bool ok = N < LIM*LIM && K < LIM;
   if (ok && memo[N][K]) return memo[N][K];
 
   llint ret = N/P[K] - rec(N/P[K], K-1) + rec(N, K-1);
