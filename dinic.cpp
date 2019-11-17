@@ -6,6 +6,9 @@
 // To use, call init(n), then add edges using edge(x, y, c1, c2), and finally
 // call run(src, sink).
 //
+// To get the min-cut, check the dist[]. An edge (x, y) is a cut iff dist[x] != -1
+// and dist[y] == -1.
+//
 // Functions:
 // - init(n) initializes the algorithm with the given number of nodes
 // - edge(x, y, c1, c2) adds edges x->y of capacity c1 and y->x of capacity c2
