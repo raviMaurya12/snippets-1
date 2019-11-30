@@ -37,10 +37,12 @@ void suffix_array(char *s, int N) {
     FOR(x, 1<<L, N) srt[x-(1<<L)].first += buc[L][x];
     sort(srt, srt+N);
 
-    int pos = 1;
-    REP(i, N) {
-      pos += i && srt[i-1].first < srt[i].first;
-      buc[L+1][srt[i].second] = pos;
+    if ((1<<L) < N) {
+      int pos = 1;
+      REP(i, N) {
+        pos += i && srt[i-1].first < srt[i].first;
+        buc[L+1][srt[i].second] = pos;
+      }
     }
   }
 }
