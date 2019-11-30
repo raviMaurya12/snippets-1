@@ -30,7 +30,7 @@ namespace Mcmf {
   int next[MAXE], from[MAXE], adj[MAXE]; llint cap[MAXE], cost[MAXE];
 
   struct cmpf {
-    bool operator () (int a, int b) {
+    bool operator () (int a, int b) const {
       if (dist[a] != dist[b]) return dist[a] < dist[b];
       return a < b;
     }
